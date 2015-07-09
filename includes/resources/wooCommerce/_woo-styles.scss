@@ -1,0 +1,37 @@
+// @media (max-width: $screen-sm-max) {
+
+// } - max width of sm
+.woocommerce ul.products li.product .button,
+button.single_add_to_cart_button.button.alt,
+.woocommerce #payment #place_order,
+.woocommerce-page #payment #place_order {
+	@extend .btn;
+	@extend .btn-primary;
+} 
+
+
+.woocommerce span.onsale {
+	line-height: 34px;
+}  
+
+
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+	width:100%;
+	text-align: center;
+	.star-rating {
+		margin: 0 auto;
+	}
+}
+
+.woocommerce .quantity .qty {
+	padding:5px;
+}
+
+
+.woocommerce form .form-row input.input-text {
+	padding: 5px 10px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+}
+
