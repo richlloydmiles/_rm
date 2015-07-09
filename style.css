@@ -1,9 +1,9 @@
 /*
-Theme Name: _rm framework
+Theme Name: Champagne
 Theme URI: http://richmiles.co.za/
-Author: ThemeKraft
+Author: Richard Miles
 Author URI: http://richmiles.co.za/
-Description: Robust 
+Description: wooCommerce theme, perfect for a classy vintage store with a morden twist of golden coffee colors.
 Version: 1.0
 License: GNU General Public License v3.0 / License URI: http://www.gnu.org/licenses/gpl-3.0.html
 License URI: see license.txt
@@ -143,7 +143,7 @@ object {
 .dropdown-submenu{position:relative;}
 .dropdown-submenu>.dropdown-menu{top:0;left:100%;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;}
 .dropdown-submenu:active>.dropdown-menu, .dropdown-submenu:hover>.dropdown-menu {
-display: block;
+	display: block;
 }
 .dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
 .dropdown-submenu:active>a:after{border-left-color:#ffffff;}
@@ -151,12 +151,12 @@ display: block;
 
 
 /* Here some needed widget styles
- * Most widgets are adapted in the file bootstrap-wp.js - and REALLY easy to modify! ;) */
+* Most widgets are adapted in the file bootstrap-wp.js - and REALLY easy to modify! ;) */
 .widget { margin-bottom: 2em; }
 .widget_nav_menu ul.sub-menu li, .widget_pages ul.children li { padding-left: 15px; }
 
 /* Hiding the search widget's button in widgets. thats just too old-skool. :) but if you want it back, just delete the next line.
- * Note: you can change the whole appearance of the search_form() function in our searchform.php */
+* Note: you can change the whole appearance of the search_form() function in our searchform.php */
 .widget_search .search-form input[type="submit"] { display: none; }
 
 /* Make sure select elements fit in widgets */
@@ -165,8 +165,8 @@ display: block;
 }
 
 /* Nested comments? They are threaded and nested already, you just need to add your own styling to finalize!
- * For example with some margin, like the line below ;) Delete, modify, change classes in HTML if you desire another style */
- .comment .children { margin-left: 1.5em; }
+* For example with some margin, like the line below ;) Delete, modify, change classes in HTML if you desire another style */
+.comment .children { margin-left: 1.5em; }
 
 /**
 * Some WP Theme Repository requirements
@@ -213,7 +213,7 @@ display: block;
  You can enable this cool feature by simply decommenting the lines below and make sure you use the same classes on the right place in your html..
 
 /* Globally hidden elements when Infinite Scroll is supported and in use.
- * Older / Newer Posts Navigation (the pagination, must always be hidden), Theme Footer only when set to scrolling.. */
+* Older / Newer Posts Navigation (the pagination, must always be hidden), Theme Footer only when set to scrolling.. */
 
 /*
 .infinite-scroll .page-links,
