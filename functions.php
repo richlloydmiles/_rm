@@ -158,3 +158,9 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
 	add_theme_support( 'woocommerce' );
 }
+
+function champ_register_menus() {
+	register_nav_menu('right_menu',__( 'Right Menu' ));
+	register_nav_menu('left_menu',__( 'Left Menu' ));
+}
+add_action( 'init', 'champ_register_menus' );

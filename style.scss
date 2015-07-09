@@ -4,3 +4,479 @@
 @import "includes/resources/wooCommerce/woo-styles"; 
 //include headroom Styling
 @import "includes/resources/headroom/headroom"; 
+
+
+$grey: #615c56;
+$gray: $grey;
+$light-grey: #d4d4d4;  
+$light-gray: $light-grey;
+$dark-grey: #2e2b28;
+$dark-gray: $dark-grey;
+$vdark-grey: #232221;
+$textgrey: #8a847e;
+$banner_text: #d5cfca;
+$link_color : #b8b1ab;
+$gold : rgba(194,153,110,0.5);
+$gold_notrans : #c2996e;
+$brown : #2e2b28;
+$sub_head : #b8b2ab;
+
+.champ-top-bar {
+	min-height: 45px;  
+	@media (min-width: $screen-sm-min) {
+		min-height: 32px;  
+	}  
+}
+
+
+
+.transition {
+	-webkit-transition: all 300ms ease-in-out;
+	-moz-transition: all 300ms ease-in-out;
+	-o-transition: all 300ms ease-in-out;
+	transition: all 300ms ease-in-out;	
+}
+
+input {
+	width:100%;
+}
+
+@mixin button($color , $bg) {
+	font-family: 'Open Sans Condensed', sans-serif!important;
+	line-height: 25px!important;
+	border-radius: 3px!important;
+	border: none!important;
+	@extend .transition; 
+	color: $color!important;
+	background: $bg!important;
+	padding: 10px!important;
+	cursor: pointer;
+	font-weight: normal!important;
+	text-transform: uppercase;
+	margin:10px auto!important;
+	font-size: 20px;
+	&:hover {
+		text-decoration: none!important;
+		@extend .transition;
+		color: $color!important;
+		background: lighten($bg,10%)!important;
+	}		
+}
+
+
+.row {
+	margin: 0;
+}
+h1,h2,h3,h4,h5 {
+	font-family: 'Open Sans Condensed', sans-serif!important;
+}
+
+.textwidget p, 
+.textwidget,
+p {
+	font-size: 16px;
+	font-family: "myriad-pro",sans-serif!important;
+}
+
+a,
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+	outline: none!important;
+} 
+
+@media (min-width: $screen-sm-min) {
+
+	.nav-left {
+		float:right;
+	}
+
+	.nav-right {
+		float:left!important;
+	}
+	.nav-bar-left,
+	.nav-bar-right  {
+		@include make-sm-column(5);
+		margin-top: 30px;
+	}
+
+	.navbar-default {
+		background-color: rgba(46,43,40,0.4);
+		border-color: $gold!important;
+	}
+
+}   
+
+#header { 
+	background-color: $gold;
+	height: 750px!important;
+	background-repeat: no-repeat!important;
+	background-position: top!important;
+	background-size: cover!important;
+	position: relative;
+	&>div {
+		position:relative;
+		margin:0 auto; 
+		max-width:1140px;
+		width:100%;
+		&>div {
+			position:absolute;
+			background-color: rgba(46,43,40,0.6)!important;
+			width:100%;
+			@media (max-width: $screen-sm-min) {
+				top:0;
+			}	
+			top:575px;
+			padding:10px;
+			&>div {
+				border:1px solid $gold;
+				padding: 10px 30px;
+			}
+		}
+	}
+}
+
+#footer {
+	background: $dark-grey;
+	padding:40px 0 0 0!important;
+	border:none!important;
+}
+#wrapper, 
+.col-full {
+	padding:0!important;
+	max-width: 1140px!important;
+}
+
+#content {
+	overflow-y: auto;
+	padding: 80px 0!important; 
+}
+.navbar-brand>img {
+	width: 220px; 
+} 
+
+.navbar-brand {
+	padding: 15px;
+	display: table;
+	margin: 0 auto!important;
+	float: none!important;
+}
+
+.bottom_logo>img {
+	width: 220px;
+}
+
+.widget {
+	list-style: none;
+	margin:0 !important;
+}
+@media (min-width: $screen-sm-min) {
+
+	.headroom {
+		-webkit-transition:  all 300ms linear;
+		-moz-transition:  all 300ms linear;
+		-o-transition:  all 300ms linear;
+		transition:  all 300ms linear;	
+		.nav-bar-left,
+		.nav-bar-right {
+			-webkit-transition:  all 300ms linear;
+			-moz-transition:  all 300ms linear;
+			-o-transition:  all 300ms linear;
+			transition:  all 300ms linear;
+		}	
+
+		.navbar-brand>img {
+			-webkit-transition:  all 100ms linear;
+			-moz-transition:  all 100ms linear;
+			-o-transition:  all 100ms linear;
+			transition:  all 100ms linear;
+		}
+		.navbar-brand {
+			-webkit-transition:  all 300ms linear;
+			-moz-transition:  all 300ms linear;
+			-o-transition:  all 300ms linear;
+			transition:  all 300ms linear;	
+		}
+
+	}
+	.headroom--pinned {
+		background-color: rgba(46,43,40,0.4)!important;
+		.navbar-brand {
+			padding: 15px;
+		}
+		.nav-bar-left,
+		.nav-bar-right {
+			margin-top:30px;
+		}
+		.navbar-brand>img {
+			width:220px;
+		}
+	}
+	.headroom--unpinned {
+		#bs-example-navbar-collapse-1 li>a:hover {
+			color: $textgrey!important;
+		}
+		background-color: rgba(255,255,255,1.0)!important;
+		.navbar-brand {
+			padding: 15px;
+		}
+		.nav-bar-left,
+		.nav-bar-right {
+			margin-top:15px;
+		}
+		.navbar-brand>img {
+			width:100px;
+		}
+	}    
+}
+.clearfix {
+	clear: both!important;  
+}
+
+.social_media_icon {
+	@extend .transition;
+	cursor: pointer;
+	color: $dark-grey; 
+	background: $grey;
+	height: 45px;
+	width: 45px; 
+	font-size: 20px !important;
+	line-height: 47px !important; 
+	border-radius: 3px; 
+	margin: 2px;
+	&:hover {
+		@extend .transition;
+		color: $dark-grey;
+		background: lighten($grey,10%);
+	}
+} 
+.wpcf7-submit  {
+	@include button($dark-grey , $gold_notrans);
+	width:100%!important;
+	display: block!important; 
+}
+.arque_button {
+	@include button($dark-grey , $gold_notrans);
+	width:100%!important;
+	display: block!important;
+}
+button.button, #wrapper .woo-sc-button,
+.button.btn.epm-sign-up-button.epm-submit-chimp {
+	@include button($dark-grey, $grey);	
+	width:100%!important;
+	display: block!important;
+}
+
+.banner_button {
+	@include button(white, $gold_notrans);		
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+
+.epm-form-field>label {
+	display: none!important;
+}
+
+#epm-email {
+	padding: 12px 12px 13px 12px;
+	background: $light-grey!important;
+	border: none;
+	margin-bottom: 5px;
+	border-radius: 3px!important; 
+	font-size: 1em;
+	color: $gray;
+	width: 100%;
+	text-align: center;
+	font-family: inherit;
+}
+
+.bottom_menu {
+	background: $vdark-grey;
+}
+#menu-bottom-menu {
+	padding: 20px 10px;
+	&>li {
+		list-style-type: none;
+		padding: 10px;
+		&>a {
+			font-family: 'Open Sans Condensed', sans-serif!important;
+		}
+	}
+}
+#footer, #footer p {
+	color: $grey!important;
+	font-family: "myriad-pro",sans-serif!important;
+	font-size: 16px;
+}
+
+#menu-bottom-menu {
+	@media (min-width: $screen-sm-min) { 
+		&>li {
+			display: inline-block;
+			&:last-child>a:before {
+				display: none;
+			} 
+		}
+	}
+	&>li {
+		position: relative;
+		padding: 0px 10px; 
+		&>a {
+			@extend .transition;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: 18px;
+			font-weight: normal;
+			color: $textgrey;
+			&:hover {
+				@extend .transition;
+				color: $grey!important;	
+			}
+		}
+	}
+}
+
+
+#bs-example-navbar-collapse-1 {
+	li.current-menu-item a, 
+	li>a {
+		font-size: 20px;
+		padding-left:20px;
+		padding-right:20px;
+		@extend .transition;
+		background: transparent;
+		text-transform: uppercase;
+		color: white;
+		font-family: 'Open Sans Condensed', sans-serif!important;
+		&:hover {
+			@extend .transition;
+			color: white;	
+		}
+	}	
+	li.current-menu-item a {
+		color: $gold_notrans; 
+	}
+}
+
+.widgettitle {
+	color:$textgrey;
+	margin: 30px 0;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+.banner_title {
+	line-height: 60px;
+	color:$banner_text;
+	font-weight: normal;
+}
+
+.col-full {
+	max-width: 1140px;
+}
+
+.widget p, .widget .textwidget {
+	color : $grey!important;
+}
+
+.title.entry-title {
+	font-weight: normal!important;
+	text-transform: uppercase;
+	padding-left: 15px;
+	padding-right: 15px;
+	color:$grey!important;
+}
+
+.wpcf7-form-control-wrap>input, 
+.wpcf7-form-control-wrap>textarea,
+.wpcf7-form-control-wrap>select {
+	border: 2px solid $sub_head;
+	color: #999999;
+	margin-bottom: 0;
+	width: 100%;
+	padding: 8px 10px 5px 10px;
+	outline: none;
+	letter-spacing: 0.5pt;
+	font-size: 14px;
+	border-radius: 6px;
+	line-height: 20px;
+	@extend .transition;
+	font-family: "myriad-pro",sans-serif!important;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none; 
+	padding-top: 5px;
+	&:focus {
+		background: #f6f3ef;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+		border: 2px solid $gold_notrans!important;
+	}
+	&:hover {
+		border: 2px solid $gold_notrans;
+	} 
+}
+
+
+.form-control:focus {
+	border-color:$gold_notrans!important;
+} 
+
+.wpcf7-form-control-wrap>input,
+.wpcf7-form-control-wrap>select {
+	height: 40px!important;
+}
+
+
+p.form-group {
+	margin: 0;
+}
+
+
+label {
+	font-family: 'Open Sans Condensed', sans-serif!important;
+	text-transform: uppercase;
+	font-weight: $grey;
+	font-size: 18px!important;
+	font-weight: normal;
+}
+
+.wpcf7-mail-sent-ok {
+	border-color: $gold!important;
+	padding: 10px;
+	color: $grey;
+	background: $light-grey;
+}
+
+.entry p {
+	color: $textgrey!important;
+	font-size: 14px;
+}
+
+.entry img, img.thumbnail, #portfolio .group.portfolio-img img {
+	padding: 0!important;
+	border: none!important;
+}
+
+.entry h2 {
+	color: $sub_head!important;
+	font-size: 22px!important;
+	text-transform: none!important;
+}
+
+.contact_subheading {
+	color: $sub_head!important;
+	font-size: 18px!important;
+	text-transform: none;	
+	font-family: 'Open Sans Condensed', sans-serif!important;
+}
+
+
+.grid-text {
+	h2 {
+		font-family: 'Open Sans Condensed', sans-serif!important;	
+	}
+}

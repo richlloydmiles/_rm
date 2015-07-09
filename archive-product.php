@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-get_header( 'alt' ); ?>
+get_header(); ?>
 
 <div class="container">
 	
