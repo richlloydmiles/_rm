@@ -90,45 +90,6 @@
 					<div class="row">
 						<div id="content" class="main-content-inner col-sm-12 col-md-8">
 
-							<style>
-								.asad {
-									height:200px;
-								}
-								.owl-dot {
-									background-color: red;
-									height:30px;
-									width: 30px;
-									display: inline-block;
-									margin:15px;
-								}
-								.owl-dot.active {
-									background-color: blue;
-								}
-							</style>
-							<div class="slider">
-								<div class="asad">
-									asdasd
-								</div>
-								<div class="asad">
-									asdasd
-								</div>
-								<div class="asad">
-									asdasd
-								</div>
-								<div class="asad">
-									asdasd
-								</div>
-								<div class="asad">
-									asdasd
-								</div>
-								<div class="asad">
-									asdasd
-								</div>
-								<div class="asad">
-									asdasd
-								</div>
-							</div>
-
 							<script>
 								jQuery(document).ready(function($) {
 									jQuery('.slider').owlCarousel({
