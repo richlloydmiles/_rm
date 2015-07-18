@@ -36,10 +36,13 @@
 						<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
 					</a>
 					<?php } // end if ( ! empty( $header_image ) ) ?>
+
+
 					<div class="site-branding">
 						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 						<p class="lead"><?php bloginfo( 'description' ); ?></p>
 					</div>
+
 				</div>
 			</div>
 		</div><!-- .container -->
@@ -86,67 +89,5 @@
 
 			<div class="main-content">
 				<?php // substitute the class "container-fluid" below if you want a wider content area ?>
-				<div class="container">
-					<div class="row">
-						<div id="content" class="main-content-inner col-sm-12 col-md-8">
+				<div id="content" class="main-content-inner">
 
-							<style>
-								.asad {
-									height:200px;
-								}
-								.owl-dot {
-									background-color: red;
-									height:30px;
-									width: 30px;
-									display: inline-block;
-									margin:15px;
-								}
-								.owl-dot.active {
-									background-color: blue;
-								}
-							</style>
-							<div class="slider">
-								<div class="asad">
-									asdasd
-								</div>
-								<div class="asad">
-									asdasd
-								</div>
-								<div class="asad">
-									asdasd
-								</div>
-								<div class="asad">
-									asdasd
-								</div>
-								<div class="asad">
-									asdasd
-								</div>
-								<div class="asad">
-									asdasd
-								</div>
-								<div class="asad">
-									asdasd
-								</div>
-							</div>
-
-							<script>
-								jQuery(document).ready(function($) {
-									jQuery('.slider').owlCarousel({
-										loop:true,
-										nav:true,
-										items:2,
-										margin:40,
-										navText: ['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
-										responsive : {
-											769 : {
-												items:2,
-											},
-											0 : {
-												items:1,
-											},
-										},
-										transitionStyle : "fade" , 
-										pagination : true
-									});
-								});
-							</script>

@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 		sass: {
 			dist: {
 				files: {
-					'includes/resources/bootstrap/css/bootstrap.min.css' : 'style.scss'
+					'custom-styles.min.css' : 'style.scss'
 				},
 				options : {
 					style : 'compressed'
@@ -18,7 +18,8 @@ module.exports = function(grunt) {
 					'includes/resources/headroom/headroom-custom.min.js' : [
 					'includes/resources/headroom/headroom.min.js' ,
 					'includes/resources/headroom/headroom-jquery.min.js' ,
-					'includes/resources/headroom/headroom-custom.js' 
+					'includes/resources/headroom/headroom-custom.js' ,
+					'includes/resources/owl/owl.min.js' ,
 					]
 				},
 				options : {
@@ -30,7 +31,9 @@ module.exports = function(grunt) {
 			css: {
 				files: ['style.scss',
 				'includes/resources/wooCommerce/_woo-styles.scss',
-				'includes/resources/headroom/_headroom.scss'
+				'includes/resources/headroom/_headroom.scss',
+				'includes/resources/bootstrap/css/_bootstrap.scss',
+				'includes/resources/owl/_owl.scss',
 				],
 				tasks: ['sass']
 			} , 

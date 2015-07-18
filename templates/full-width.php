@@ -5,7 +5,7 @@
  * @package _tk
  */
 
-get_header('alt'); ?>
+get_header('full'); ?>
 
 <div class="container">
 	<div class="row">

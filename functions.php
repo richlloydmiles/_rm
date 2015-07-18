@@ -93,7 +93,7 @@ function _tk_scripts() {
 	wp_enqueue_style( '_tk-bootstrap-wp', get_template_directory_uri() . '/includes/css/bootstrap-wp.css' );
 
 	// load bootstrap css
-	wp_enqueue_style( '_tk-bootstrap', get_template_directory_uri() . '/includes/resources/bootstrap/css/bootstrap.min.css' );
+	wp_enqueue_style( '_tk-bootstrap', get_template_directory_uri() . '/custom-styles.min.css' );
 
 	// load Font Awesome css
 	wp_enqueue_style( '_tk-font-awesome', get_template_directory_uri() . '/includes/css/font-awesome.min.css', false, '4.1.0' );
@@ -120,6 +120,8 @@ function _tk_scripts() {
 
 	// conditional load of headroom js
 	wp_enqueue_script( '_tk-headroom', get_template_directory_uri() . '/includes/resources/headroom/headroom-custom.min.js', array('jquery') );
+
+	wp_enqueue_script( '_tk-owl', get_template_directory_uri() . '/includes/resources/owl/owl.min.js', array('jquery') );
 
 }
 add_action( 'wp_enqueue_scripts', '_tk_scripts' );
