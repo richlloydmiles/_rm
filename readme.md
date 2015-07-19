@@ -1,1 +1,6 @@
-# _rm theme
+_rm theme
+======
+### Steps for adding a new resource
+
+* Test
+* testing again
