@@ -92,8 +92,7 @@ function _tk_scripts() {
 	// Import the necessary TK Bootstrap WP CSS additions
 	wp_enqueue_style( '_tk-bootstrap-wp', get_template_directory_uri() . '/includes/css/bootstrap-wp.css' );
 
-	// load custom css
-	wp_enqueue_style( '_tk-bootstrap', get_template_directory_uri() . '/custom-styles.min.css' );
+
 
 	// load Font Awesome css
 	wp_enqueue_style( '_tk-font-awesome', get_template_directory_uri() . '/includes/css/font-awesome.min.css', false, '4.1.0' );
@@ -101,8 +100,6 @@ function _tk_scripts() {
 	// load _tk styles
 	wp_enqueue_style( '_tk-style', get_stylesheet_uri() );
 
-	// load bootstrap js
-	wp_enqueue_script('_tk-bootstrapjs', get_template_directory_uri().'/includes/resources/bootstrap/js/bootstrap.min.js', array('jquery') );
 
 
 		// load bootstrap wp js
@@ -238,10 +235,19 @@ add_shortcode('slideshow' , function($args) {
 					mouseDrag : true,
 					navText: ['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>']
 				});
-			});	
+			});
 		</script>
 		<?php
         //end while
 	}
     //end if
 });
+
+add_action( 'wp_enqueue_scripts', function() {
+	// load bootstrap js
+	wp_enqueue_script('_tk-custom', get_template_directory_uri().'/custom-script.min.js', array('jquery') );
+
+	// load custom css
+	wp_enqueue_style( '_tk-custom', get_template_directory_uri() . '/custom-styles.min.css' );
+});
+

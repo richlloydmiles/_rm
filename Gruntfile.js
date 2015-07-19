@@ -7,38 +7,30 @@ module.exports = function(grunt) {
 				files: {
 					'custom-styles.min.css' : 'style.scss'
 				},
+
 				options : {
-					style : 'compressed'
+					style : 'compressed',
 				}
 			}
 		},
 		uglify : {
-			dist: { 
+			dist: {  
 				files: {
-					'includes/resources/headroom/headroom-custom.min.js' : [
-					'includes/resources/headroom/headroom.min.js' ,
-					'includes/resources/headroom/headroom-jquery.min.js' ,
-					'includes/resources/headroom/headroom-custom.js' ,
-					'includes/resources/owl/owl.min.js' ,
-					]
+					'custom-script.min.js' : ['includes/resources/*/js/*.js']
 				},
 				options : {
-					style : 'compressed' 
+					style : 'compressed' ,
+					sourceMap : false,
 				}
 			}
 		},
 		watch: {
 			css: {
-				files: ['style.scss',
-				'includes/resources/wooCommerce/_woo-styles.scss',
-				'includes/resources/headroom/_headroom.scss',
-				'includes/resources/bootstrap/css/_bootstrap.scss',
-				'includes/resources/owl/_owl.scss',
-				],
+				files: ['style.scss', 'includes/resources/*/css/*.scss'],
 				tasks: ['sass']
 			} , 
 			js : {
-				files:  ['includes/resources/headroom/*.js'],
+				files:  ['includes/resources/*/js/*.js'],
 				tasks:['uglify']
 			},
 		}
