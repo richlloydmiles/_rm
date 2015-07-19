@@ -89,25 +89,3 @@
 				<div class="container">
 					<div class="row">
 						<div id="content" class="main-content-inner col-sm-12 col-md-8">
-
-							<script>
-								jQuery(document).ready(function($) {
-									jQuery('.slider').owlCarousel({
-										loop:true,
-										nav:true,
-										items:2,
-										margin:40,
-										navText: ['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
-										responsive : {
-											769 : {
-												items:2,
-											},
-											0 : {
-												items:1,
-											},
-										},
-										transitionStyle : "fade" , 
-										pagination : true
-									});
-								});
-							</script>

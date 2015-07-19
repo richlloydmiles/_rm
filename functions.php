@@ -92,7 +92,7 @@ function _tk_scripts() {
 	// Import the necessary TK Bootstrap WP CSS additions
 	wp_enqueue_style( '_tk-bootstrap-wp', get_template_directory_uri() . '/includes/css/bootstrap-wp.css' );
 
-	// load bootstrap css
+	// load custom css
 	wp_enqueue_style( '_tk-bootstrap', get_template_directory_uri() . '/custom-styles.min.css' );
 
 	// load Font Awesome css
@@ -156,7 +156,92 @@ require get_template_directory() . '/includes/jetpack.php';
  */
 require get_template_directory() . '/includes/bootstrap-wp-navwalker.php';
 
+/**
+ * Adds shortcode support in widgets
+ */
+add_filter('widget_text', 'do_shortcode');
+
+/**
+ * Adds WooCommerce support
+ */
 add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
 	add_theme_support( 'woocommerce' );
 }
+
+
+add_action('init' , function() {
+	////////////////////////////////////////////
+	///Slides
+	///////////////////////////////////////////
+	$labels = array(
+		'name'               => _x( 'Slides', 'post type general name', 'wobble' ),
+		'singular_name'      => _x( 'Slide', 'post type singular name', 'wobble' ),
+		'menu_name'          => _x( 'Slides', 'admin menu', 'wobble' ),
+		'name_admin_bar'     => _x( 'Slides', 'add new on admin bar', 'wobble' ),
+		'add_new'            => _x( 'Add New', 'Slide', 'wobble' ),
+		'add_new_item'       => __( 'Add New Slide', 'wobble' ),
+		'new_item'           => __( 'New Slide', 'wobble' ),
+		'edit_item'          => __( 'Edit Slide', 'wobble' ),
+		'view_item'          => __( 'View Slide', 'wobble' ),
+		'all_items'          => __( 'All Slides', 'wobble' ),
+		'search_items'       => __( 'Search Slides', 'wobble' ),
+		'parent_item_colon'  => __( 'Parent Slide:', 'wobble' ),
+		'not_found'          => __( 'No Slides found.', 'wobble' ),
+		'not_found_in_trash' => __( 'No Slides found in Trash.', 'wobble' )
+		);
+
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'slides' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+		'supports'           => array( 'title' , 'thumbnail' , 'excerpt'),
+		'menu_icon'			 => 'dashicons-format-gallery'
+		);
+	// register_post_type( 'slides', $args ); 
+});
+
+//[slideshow] shortcode
+add_shortcode('slideshow' , function($args) {
+	query_posts( array( 
+		'post_type' => 'slides' ,
+		'showposts' => '-1'  ) ) ;
+	if ( have_posts() ) {
+		?>
+		<div id="banner_slider">
+			<?php
+			while ( have_posts() ) { the_post();
+				?>
+				<div>
+					<?php the_post_thumbnail(); ?>	
+				</div>
+				<?php
+			}
+			?>
+			<?php wp_reset_query(); ?>
+		</div>
+		<script>
+			jQuery(document).ready(function() {
+				jQuery("#banner_slider").owlCarousel({
+					loop:true,
+					nav:true,
+					items:1,
+					margin:0,
+					mouseDrag : true,
+					navText: ['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>']
+				});
+			});	
+		</script>
+		<?php
+        //end while
+	}
+    //end if
+});
