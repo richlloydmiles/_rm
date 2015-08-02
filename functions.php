@@ -121,7 +121,7 @@ function _tk_scripts() {
 	wp_enqueue_script( '_tk-headroom-jquery', get_template_directory_uri() . '/includes/resources/headroom/js/headroom-jquery.min.js', array('jquery') );
 
 	wp_enqueue_script( '_tk-owl', get_template_directory_uri() . '/includes/resources/owl/owl.min.js', array('jquery') );
-
+ 
 }
 add_action( 'wp_enqueue_scripts', '_tk_scripts' );
 
