@@ -100,8 +100,8 @@ function _tk_scripts() {
 	// load _tk styles
 	wp_enqueue_style( '_tk-style', get_stylesheet_uri() );
 
-
-
+	// load bootstrap js
+	wp_enqueue_script('_tk-bootstrapjs', get_template_directory_uri().'/includes/resources/bootstrap/js/bootstrap.min.js', array('jquery') );
 		// load bootstrap wp js
 	wp_enqueue_script( '_tk-bootstrapwp', get_template_directory_uri() . '/includes/js/bootstrap-wp.js', array('jquery') );
 	wp_enqueue_script( '_tk-skip-link-focus-fix', get_template_directory_uri() . '/includes/js/skip-link-focus-fix.js', array(), '20130115', true );
@@ -113,10 +113,12 @@ function _tk_scripts() {
 	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script( '_tk-keyboard-image-navigation', get_template_directory_uri() . '/includes/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
-
+	// load custom css
+	wp_enqueue_style( '_tk-custom', get_template_directory_uri() . '/custom-styles.min.css' );
 
 	// conditional load of headroom js
-	wp_enqueue_script( '_tk-headroom', get_template_directory_uri() . '/includes/resources/headroom/headroom-custom.min.js', array('jquery') );
+	wp_enqueue_script( '_tk-headroom', get_template_directory_uri() . '/includes/resources/headroom/js/headroom.min.js', array('jquery') );
+	wp_enqueue_script( '_tk-headroom-jquery', get_template_directory_uri() . '/includes/resources/headroom/js/headroom-jquery.min.js', array('jquery') );
 
 	wp_enqueue_script( '_tk-owl', get_template_directory_uri() . '/includes/resources/owl/owl.min.js', array('jquery') );
 
@@ -243,11 +245,4 @@ add_shortcode('slideshow' , function($args) {
     //end if
 });
 
-add_action( 'wp_enqueue_scripts', function() {
-	// load bootstrap js
-	wp_enqueue_script('_tk-custom', get_template_directory_uri().'/custom-script.min.js', array('jquery') );
-
-	// load custom css
-	wp_enqueue_style( '_tk-custom', get_template_directory_uri() . '/custom-styles.min.css' );
-});
 

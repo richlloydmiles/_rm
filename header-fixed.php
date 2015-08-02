@@ -64,7 +64,7 @@
 					</div>
 				</div><!-- .container -->
 			</nav><!-- .site-navigation -->
-			<header id="masthead" class="site-header" role="banner">
+			<header id="masthead" class="site-header" role="banner" style="margin-top: 30px;">
 				<?php // substitute the class "container-fluid" below if you want a wider content area ?>
 				<div class="container">
 					<div class="row">
